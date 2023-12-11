@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-export function NotFound() {
+export function NotFound({ message = "NOT FOUND" }) {
   const navigate = useNavigate()
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -11,5 +11,5 @@ export function NotFound() {
       clearTimeout(timeout)
     }
   }, [])
-  return <h1>NOT FOUND</h1>
+  return <h1>{message}</h1>
 }
